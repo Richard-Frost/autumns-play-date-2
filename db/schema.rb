@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_174515) do
+ActiveRecord::Schema.define(version: 2020_03_04_162830) do
 
   create_table "children", force: :cascade do |t|
-    t.string "first_name_string"
+    t.string "first_name"
     t.string "last_name"
-    t.string "age_integer"
+    t.string "age"
     t.integer "family_id"
     t.string "gender"
     t.datetime "created_at", null: false
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_174515) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
   end
 
 end
