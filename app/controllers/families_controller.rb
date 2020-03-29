@@ -10,12 +10,12 @@ class FamiliesController < ApplicationController
   def create
   	@family = Family.new(family_params)
   	@family.save
+  	redirect_to '/'
   end
 
   def index
   	@family = Family.last
   end 
-
 
   private
 
