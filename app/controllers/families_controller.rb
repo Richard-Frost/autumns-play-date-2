@@ -14,7 +14,7 @@ class FamiliesController < ApplicationController
   end
 
   def index
-  	@family = Family.last
+  	@families = Family.all
   end 
 
   private

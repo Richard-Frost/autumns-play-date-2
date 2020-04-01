@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_04_162830) do
+ActiveRecord::Schema.define(version: 2020_04_01_204807) do
 
   create_table "children", force: :cascade do |t|
     t.string "first_name"
@@ -27,6 +27,26 @@ ActiveRecord::Schema.define(version: 2020_03_04_162830) do
     t.string "zipcode"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "participants", force: :cascade do |t|
+    t.integer "child_id"
+    t.integer "playdate_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "playdates", force: :cascade do |t|
+    t.string "playdate_title"
+    t.datetime "datetime"
+    t.string "location"
+    t.string "description"
+    t.integer "originator"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "zipcode"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "users", force: :cascade do |t|

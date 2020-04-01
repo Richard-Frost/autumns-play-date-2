@@ -1,12 +1,12 @@
 <h1> Edit </h1>
 
   <%= form_for(@user) do |user| %>
-	<%= user.label :first_name %></br>
-    <%= user.text_field :first_name %></br>
-    <%= user.label :last_name %></br>
-    <%= user.text_field :last_name %></br>
-    <%= user.label :title, 'Relationship to the child:' %></br>
-    <%= user.select :title, ['Parent', 'Grandparent', 'Nanny', 'Babysitter', 'Aunt', 'Uncle'] %></br>
+	<p> <%= user.label :first_name %> </p>
+    <p> <%= user.text_field :first_name %> </p>
+    <p> <%= user.label :last_name %> </p>
+    <p> <%= user.text_field :last_name %> </p>
+    <p> <%= user.label :title, 'Relationship to the child:' %></p>
+    <p> <%= user.select :title, ['Parent', 'Grandparent', 'Nanny', 'Babysitter', 'Aunt', 'Uncle'] %></p>
     <%= user.submit %>
 
 <%end%>

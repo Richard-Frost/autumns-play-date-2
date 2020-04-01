@@ -7,5 +7,11 @@ class ChildrenController < ApplicationController
 	def show
 	 @child = Child.find_by(params[:id])
 	end
+
+	def edit
+	  @child = Child.find_by(params[:id])
+    end
+
+    
 	
 end
