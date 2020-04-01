@@ -1,0 +1,11 @@
+<h1> Home </h1>
+
+<p> name: <%= current_user.first_name %> </p>
+
+<h1>my child</h1>
+
+<% my_children.each do |child| %>
+<p>name: <%= link_to child.first_name, child_path(child.id) %></p>
+<p> age: <%= child.age %></p>
+<%end%>
+

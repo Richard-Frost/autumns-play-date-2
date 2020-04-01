@@ -21,11 +21,11 @@
 
   <%= f.fields_for :children, @child do |child| %>
   	<%= child.label :first_name %></br>
-  	<%= child.text_field :first_name %>
+  	<%= child.text_field :first_name %></br>
   	<%= child.label :last_name %></br>
-  	<%= child.text_field :last_name %>
+  	<%= child.text_field :last_name %></br>
   	<%= child.label :gender %></br>
-  	<%= child.text_field :gender %></>
+  	<%= child.text_field :gender %></br>
   	<%= child.label :age %></br>
   	<%= child.text_field :age %></br>
   <%end%>
