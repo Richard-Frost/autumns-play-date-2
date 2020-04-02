@@ -1,0 +1,5 @@
+
+<p> <%= @playdate.playdate_title %> </p>
+<p> <%= @playdate.datetime.strftime("%b %e, %l:%M %p")%> </p>
+<p> Created by <%= @originator.first_name %> </p>
+<%= @playdate.description %>

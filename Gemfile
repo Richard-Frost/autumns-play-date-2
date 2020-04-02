@@ -30,6 +30,7 @@ gem 'pry'
 
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
+gem 'flatpickr'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

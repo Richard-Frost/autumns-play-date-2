@@ -17,6 +17,7 @@ class FamiliesController < ApplicationController
   	@families = Family.all
   end 
 
+
   private
 
   def family_params

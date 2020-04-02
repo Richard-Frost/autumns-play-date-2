@@ -5,6 +5,6 @@ class CreateParticipants < ActiveRecord::Migration[5.2]
       t.integer "playdate_id"
       t.datetime "created_at", null: false
       t.datetime "updated_at", null: false
-  end
+   end
   end
 end
