@@ -1,13 +1,14 @@
 class PlaydatesController < ApplicationController
-  
+
+  #before_action :require_login
+
   def new 
     @playdate = Playdate.new
-    @family = Family.find(my_family)
+    @family = current_user.family
   end
 
   def create 
     @playdate = Playdate.new(playdate_params)
-    @playdate.originator = session[:user_id]
     @playdate.save
     redirect_to playdate_path(@playdate)
   end
@@ -18,11 +19,26 @@ class PlaydatesController < ApplicationController
     @family = current_user.family
   end
 
+  def index
+    @playdates = Playdate.all
+  end
+
+  def edit
+  	@playdate = Playdate.find(params[:id])
+  	@family = current_user.family
+  end
+
+  def update 
+    @playdate = Playdate.find(params[:id])
+    @playdate.update(playdate_params)
+    redirect_to playdate_path(@playdate.id)
+  end
+
 
   private
 
   def playdate_params
-    params.require(:playdate).permit(:name, :datetime, :location, :description, :originator)
+    params.require(:playdate).permit(:playdate_title, :datetime, :location, :description, :originator, participant_ids:[])
   end
 
 end

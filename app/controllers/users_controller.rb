@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 	end
 
 	def home
+	 redirect_to '/' unless logged_in?
 	 @family = my_family
 	end
 

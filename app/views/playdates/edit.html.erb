@@ -1,4 +1,4 @@
-<p>Create a new play date: </p>
+<p>Edit your playdate </p>
 
 <%= form_for(@playdate) do |f| %>
   <%= f.label :Playdate_title %></br>
@@ -13,7 +13,7 @@
   <%= f.text_field :datetime, id: 'bar' %>
   
   <%= f.label :participants, "Select a Child:  " %>
-  <%= f.collection_check_boxes :participant_ids, @family.children, :id, :first_name  %></br>
+  <%= f.collection_check_boxes :participants, @family.children, :id, :first_name  %></br>
   <%= f.submit %>
   <br>
 <%end%>

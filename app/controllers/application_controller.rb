@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
-	helper_method :current_user, :my_family
-
+	helper_method :current_user, :my_family, :logged_in?
 private 
 
   def current_user
@@ -10,5 +9,9 @@ private
   def my_family
     current_user.family.id
   end
+
+  def logged_in?
+    !!current_user
+  end 
 
 end

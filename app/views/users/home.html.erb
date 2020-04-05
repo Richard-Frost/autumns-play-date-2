@@ -2,10 +2,23 @@
 
 <p> name: <%= current_user.first_name %> </p>
 
-<h1>my child</h1>
+<h1>my children</h1>
 
 <% my_children.each do |child| %>
 <p>name: <%= link_to child.first_name, child_path(child.id) %></p>
 <p> age: <%= child.age %></p>
-<%end%>
+ 
 
+  <% if child.upcoming_playdates.any? %>
+
+    <% child.upcoming_playdates.each do |playdate| %>
+      <%= playdate.datetime.strftime("%b %e, %l:%M %p")%> <%= link_to playdate.playdate_title, playdate_path(playdate) %></br>
+    <%end%>
+    <% else %>
+      <small> <%=child.first_name%> does not have any play dates scheduled</small></br>
+    <%end%> 
+    <% end %>
+
+  <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+    <input type=submit value='logout'>
+  <%end%>
